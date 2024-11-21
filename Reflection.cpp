@@ -1,9 +1,16 @@
-﻿// Reflection.cpp : définit le point d'entrée de l'application.
-//
+﻿/*!
+ *  @file Reflection.cpp
+ *  @author Paul
+ *  @date 2024-11-21
+ *
+ *  main entry point
+ */
 
 #include "Reflection.h"
 #include "LayoutIterator.h"
 #include "LayoutView.h"
+
+#include <iostream>
 
 struct FooStruct
 {
