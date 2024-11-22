@@ -10,7 +10,7 @@
 
 #include <span>
 
-#include "Name.h"
+#include "Core/Name.h"
 #include "Reflection.h"
 
 using int32 = std::int32_t;

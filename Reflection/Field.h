@@ -8,7 +8,7 @@
 #pragma once
 
 #include <type_traits>
-#include "StaticString.h"
+#include "Core/StaticString.h"
 
 #define WIDETEXT(x)  L ## x
 

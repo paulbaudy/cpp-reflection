@@ -1,5 +1,5 @@
-﻿/*!
- *  @file Reflection.h
+/*!
+ *  @file Layout.h
  *  @author Paul
  *  @date 2024-11-20
  *
@@ -9,18 +9,19 @@
 #pragma once
 
 #include <stdint.h>
-#include "Field.h"
-#include "StaticString.h"
-#include "Tuple.h"
-#include "Name.h"
+
+#include "Reflection/Field.h"
+#include "Core/StaticString.h"
+#include "Core/Tuple.h"
+#include "Core/Name.h"
 
 using int32 = std::int32_t;
 
 #define WIDETEXT(x)  L ## x
 
- /**
-  * Determines if T is constructible from a set of arguments.
-  */
+/**
+ * Determines if T is constructible from a set of arguments.
+ */
 template <typename T, typename... Args>
 struct TIsConstructible
 {

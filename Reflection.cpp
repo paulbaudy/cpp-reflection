@@ -6,9 +6,9 @@
  *  main entry point
  */
 
-#include "Reflection.h"
-#include "LayoutIterator.h"
-#include "LayoutView.h"
+#include "Reflection/LayoutIterator.h"
+#include "Reflection/LayoutView.h"
+#include "Reflection/Layout.h"
 
 #include <iostream>
 
