@@ -32,13 +32,13 @@ RF_END_LAYOUT()
 namespace Reflection
 {
 	template<class T>
-	class TLipsyncTraits
+	class TReflectionTraits
 	{
-		TLipsyncTraits() = delete;
+		TReflectionTraits() = delete;
 	};
 
 	template<>
-	class TLipsyncTraits<double>
+	class TReflectionTraits<double>
 	{
 	public:
 		static void Foo(const double& InValue)
@@ -48,7 +48,7 @@ namespace Reflection
 	};
 
 	template<>
-	class TLipsyncTraits<std::uint32_t>
+	class TReflectionTraits<std::uint32_t>
 	{
 	public:
 		static void Foo(const std::uint32_t& InValue)
@@ -57,25 +57,25 @@ namespace Reflection
 		}
 	};
 
-	template<class T, bool bHasTraits = TIsConstructible<TLipsyncTraits<T>>::Value>
-	class FLipsyncStateHelper;
+	template<class T, bool bHasTraits = TIsConstructible<TReflectionTraits<T>>::Value>
+	class FReflectionStateHelper;
 
 	template<class T>
-	class FLipsyncStateHelper<T, false>
+	class FReflectionStateHelper<T, false>
 	{
 	public:
 		template<class parent_t, class field_t> static Reflection::EFieldIterator FooIterator(const parent_t&, const field_t&, const Rf::FLayoutFieldView&) { return EFieldIterator::Enter; }
 	};
 
 	template<class T>
-	class FLipsyncStateHelper<T, true>
+	class FReflectionStateHelper<T, true>
 	{
 	public:
 		template<class field_t, class parent_t>
 		static Reflection::EFieldIterator FooIterator(const parent_t&, const field_t& InField, const Rf::FLayoutFieldView& InViewer)
 		{
 			const auto& Value = InViewer.Get(InField);
-			TLipsyncTraits<T>::Foo(Value);
+			TReflectionTraits<T>::Foo(Value);
 			return EFieldIterator::Stop;
 		}
 	};
@@ -84,7 +84,7 @@ namespace Reflection
 	Reflection::EFieldIterator FooIterator(const parent_field_t& InParentField, const field_t& InField, const Rf::FLayoutFieldView& InViewer)
 	{
 		using T = typename field_t::Type;
-		return FLipsyncStateHelper<T>::FooIterator(InParentField, InField, InViewer);
+		return FReflectionStateHelper<T>::FooIterator(InParentField, InField, InViewer);
 	}
 
 
