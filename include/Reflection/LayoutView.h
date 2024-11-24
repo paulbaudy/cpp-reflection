@@ -9,9 +9,7 @@
 #pragma once
 
 #include <span>
-
-#include "Core/Name.h"
-
+#include <Core/Name.h>
 
 using int32 = std::int32_t;
 using uint8 = std::uint8_t;

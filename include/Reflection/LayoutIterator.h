@@ -12,7 +12,7 @@
 #pragma once
 
 #include "Layout.h"
-#include "Core/TupleVisitor.h"
+#include <Core/TupleVisitor.h>
 
 #define WIDETEXT(x)  L ## x
 

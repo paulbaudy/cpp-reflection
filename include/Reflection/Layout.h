@@ -11,9 +11,9 @@
 #include <stdint.h>
 
 #include "Field.h"
-#include "Core/StaticString.h"
-#include "Core/Tuple.h"
-#include "Core/Name.h"
+#include <Core/StaticString.h>
+#include <Core/Tuple.h>
+#include <Core/Name.h>
 
 using int32 = std::int32_t;
 
