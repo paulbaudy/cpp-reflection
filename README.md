@@ -28,12 +28,12 @@ RF_END_LAYOUT()
 ```
 Then implement a field iterator to visit class members
 ```
-	template<class field_t, class parent_field_t>
-	Reflection::EFieldIterator FooIterator(const parent_field_t& InParentField, const field_t& InField, const Rf::FLayoutFieldView& InViewer)
-	{
-		using T = typename field_t::Type;
-		return FLipsyncStateHelper<T>::FooIterator(InParentField, InField, InViewer);
-	}
+template<class field_t, class parent_field_t>
+Reflection::EFieldIterator FooIterator(const parent_field_t& InParentField, const field_t& InField, const Rf::FLayoutFieldView& InViewer)
+{
+	using T = typename field_t::Type;
+	return FReflectionStateHelper<T>::FooIterator(InParentField, InField, InViewer);
+}
 ```
 
 ## Build and Install
