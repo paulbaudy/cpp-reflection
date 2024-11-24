@@ -13,6 +13,8 @@ add_executable (Reflection "Reflection.cpp"
 	${RF_FILES}
 	${CORE_FILES})
 
+target_include_directories(Reflection PRIVATE "Reflection")
+
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET Reflection PROPERTY CXX_STANDARD 20)
 endif()

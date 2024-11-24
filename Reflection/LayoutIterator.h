@@ -11,7 +11,7 @@
 
 #pragma once
 
-#include "Reflection/Layout.h"
+#include "Layout.h"
 #include "Core/TupleVisitor.h"
 
 #define WIDETEXT(x)  L ## x
