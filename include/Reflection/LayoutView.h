@@ -8,9 +8,11 @@
 
 #pragma once
 
-#include <span>
 #include <cstring>
 #include <Core/Name.h>
+#include <functional>
+#include <utility>
+#include <span>
 
 using int32 = std::int32_t;
 using uint8 = std::uint8_t;
@@ -41,7 +43,7 @@ namespace Rf
 		 * @return Get()(InArgs...)
 		 */
 		template<class... args_t>
-		auto operator()(args_t&&... InArgs) const -> decltype(Invoke(DeclVal<T&>(), DeclVal<args_t>()...))
+		auto operator()(args_t&&... InArgs) const -> decltype(std::invoke(std::declval<T&>(), std::declval<args_t>()...))
 		{
 			return (*Ref)(Forward<args_t>(InArgs)...);
 		}
@@ -51,7 +53,7 @@ namespace Rf
 		 * @return Get()(InArgs...)
 		 */
 		template<class... args_t>
-		auto operator()(args_t&&... InArgs) -> decltype(Invoke(DeclVal<T&>(), DeclVal<args_t>()...))
+		auto operator()(args_t&&... InArgs) -> decltype(std::invoke(std::declval<T&>(), std::declval<args_t>()...))
 		{
 			return (*Ref)(Forward<args_t>(InArgs)...);
 		}
