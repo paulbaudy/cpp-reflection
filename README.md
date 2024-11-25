@@ -10,7 +10,7 @@ cpp20 reflection system for classes & structs based on templates & tuples. Suppo
 
 ## Usage
 
-```
+```cpp
 struct FooStruct
 {
 	double X = 0.f;
