@@ -42,5 +42,8 @@ Todo
 
 ## Release notes
 
-Todo
+### cpp-reflection 0.0.1 - Work in progress
+
+Features : 
+- Main release of the library
 
