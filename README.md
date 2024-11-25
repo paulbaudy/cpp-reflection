@@ -1,7 +1,7 @@
 # Reflection
 
 This is a work in progress
-cpp20 reflection system for classes & structs based on templates & tuples. Supports Clang & CL
+cpp20 reflection system for classes & structs based on templates & tuples. Supports Clang 16 & CL
 
 ## Project Health
 
@@ -27,7 +27,7 @@ RF_BEGIN_LAYOUT(FooStruct)
 RF_END_LAYOUT()
 ```
 Then implement a field iterator to visit class members
-```
+```cpp
 template<class field_t, class parent_field_t>
 Reflection::EFieldIterator FooIterator(const parent_field_t& InParentField, const field_t& InField, const Rf::FLayoutFieldView& InViewer)
 {
@@ -39,12 +39,12 @@ Reflection::EFieldIterator FooIterator(const parent_field_t& InParentField, cons
 ## Build and Install
 
 * Clone the repository
-```
+```shell
 git clone https://github.com/paulbaudy/cpp-reflection.git
 ```
 * Build using CMake
 
-```
+```cmake
 cd /path/to/repository
 cmake \
     -B build .
@@ -54,7 +54,7 @@ cmake --build build -- install
 ```
 * Or add this repository as a subdirectory in your CMakeLists file :
   
-```
+```cmake
 add_subdirectory("/path/to/repository")
 ```
 
