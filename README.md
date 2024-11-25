@@ -44,7 +44,7 @@ git clone https://github.com/paulbaudy/cpp-reflection.git
 ```
 * Build using CMake
 
-```cmake
+```shell
 cd /path/to/repository
 cmake \
     -B build .
