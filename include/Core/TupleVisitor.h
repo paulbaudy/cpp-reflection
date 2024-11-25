@@ -31,12 +31,12 @@ struct TTupleArity : TCVTupleArity<const volatile TupleType>
 {
 };
 
-#if defined(__GNUC__) || defined(__GNUG__)
-template <typename T, T N>
-using TMakeIntegerSequence = __integer_pack<TIntegerSequence, T, N>;
-#else 
+#if defined(__clang__) || defined(_MSC_VER)
 template <typename T, T N>
 using TMakeIntegerSequence = __make_integer_seq<TIntegerSequence, T, N>;
+#else 
+template <typename T, T N>
+using TMakeIntegerSequence = __integer_pack<TIntegerSequence, T, N>;
 #endif
 
 template <typename IntegerSequence>
