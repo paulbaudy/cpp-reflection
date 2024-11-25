@@ -42,7 +42,7 @@ public:
 };
 
 template <class... _Types>
-_NODISCARD constexpr RTuple<_Unrefwrap_t<_Types>...> MakeTuple(_Types&&... _Args) 
+[[nodiscard]] constexpr RTuple<_Unrefwrap_t<_Types>...> MakeTuple(_Types&&... _Args) 
 {
 	using _Ttype = RTuple<_Unrefwrap_t<_Types>...>;
 	return _Ttype(_STD forward<_Types>(_Args)...);
