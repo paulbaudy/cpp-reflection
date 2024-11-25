@@ -39,11 +39,13 @@ Reflection::EFieldIterator FooIterator(const parent_field_t& InParentField, cons
 ## Build and Install
 
 * Clone the repository
+```
 git clone https://github.com/paulbaudy/cpp-reflection.git
-
+```
 * Build using CMake
 
 ```
+cd /path/to/repository
 cmake \
     -B build .
 
