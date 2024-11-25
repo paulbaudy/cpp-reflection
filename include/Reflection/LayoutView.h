@@ -9,6 +9,7 @@
 #pragma once
 
 #include <span>
+#include <cstring>
 #include <Core/Name.h>
 
 using int32 = std::int32_t;

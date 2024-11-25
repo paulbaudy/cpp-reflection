@@ -5,6 +5,7 @@
  *
  */
 
+#include <functional>
 #include <stdint.h>
 #include "Tuple.h"
 
