@@ -52,7 +52,7 @@ cmake \
 cmake --build build -- all
 cmake --build build -- install
 ```
-* Or add this repository as a subdirectory in your CMakeLists file :
+* Or add this repository as a subdirectory in your `CMakeLists` file :
   
 ```cmake
 add_subdirectory("/path/to/repository")
